@@ -10,8 +10,8 @@ import com.feicuiedu.atm.tool.Propertie;
 import com.feicuiedu.atm.userDocument.TransMoney;
 
 /**
- * ×ªÕË½çÃæ
- * @author ²Ü¾°Óñ
+ * è½¬è´¦ç•Œé¢
+ * @author æ›¹æ™¯ç‰
  *
  */
 public class TransMoneyUi {
@@ -23,8 +23,8 @@ public class TransMoneyUi {
 	private String taccount;
 	private Scanner sca = new Scanner(System.in);
 	/**
-	 * ×ªÕË·½·¨
-	 * @param account ´«ÈëµÄÕË»§(ÓÃ»§µÇÂ¼µÄÕË»§)
+	 * è½¬è´¦æ–¹æ³•
+	 * @param account ä¼ å…¥çš„è´¦æˆ·(ç”¨æˆ·ç™»å½•çš„è´¦æˆ·)
 	 */
 	public void transMoney(String account){
 		
@@ -38,7 +38,8 @@ public class TransMoneyUi {
 		    
 		    LandDocument ld = new LandDocument();
 		    List<Map<String,String>> list = ld.accountVerify(taccount);
-		    //ÅĞ¶Ï¶Ô·½ÕË»§ÊÇ·ñ´æÔÚ
+		    String acco = list.get(0).get("account");
+		    //åˆ¤æ–­å¯¹æ–¹è´¦æˆ·æ˜¯å¦å­˜åœ¨
 		    if(!(list == null || list.isEmpty())){
 		    	
 		    	str = prop.getProperty("a39");
@@ -46,6 +47,10 @@ public class TransMoneyUi {
 		    	amount = sca.next();
 		    	balance = Double.valueOf(amount);
 		    	break;
+		    }else if(acco.equals(account)){
+		    	
+		    	str = prop.getProperty("a47");
+		    	System.out.println(str);
 		    }else{
 		    	
 		    	str = prop.getProperty("a3");
@@ -54,7 +59,7 @@ public class TransMoneyUi {
 	    }
 	    
 	    TransMoney tm = new TransMoney();
-	    //µ÷ÓÃ×ªÕË·½·¨
+	    //è°ƒç”¨è½¬è´¦æ–¹æ³•
 	   if( tm.transMoney(account, taccount, balance)){
 		   
 		   str = prop.getProperty("a40");
