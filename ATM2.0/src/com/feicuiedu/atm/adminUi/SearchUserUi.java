@@ -6,14 +6,14 @@ import java.util.Map;
 import com.feicuiedu.atm.document.SearchUserDocument;
 
 /**
- * ²éÑ¯ÆÕÍ¨ÓÃ»§
- * @author ²Ü¾°Óñ
+ * æŸ¥è¯¢æ™®é€šç”¨æˆ·
+ * @author æ›¹æ™¯çŽ‰
  *
  */
 public class SearchUserUi {
 
 	/**
-	 * ²éÑ¯·½·¨
+	 * æŸ¥è¯¢æ–¹æ³•
 	 */
 	public void seachUser(){
 		
@@ -30,20 +30,15 @@ public class SearchUserUi {
           String gender = m.get("sex");
           if(gender.equals("1")){
 
-        	  m.put("sex", "ÄÐ");
+        	  m.put("sex", "ç”·");
           }else if(gender.equals("2")){
         	  
-        	  m.put("sex", "Å®");
+        	  m.put("sex", "å¥³");
           }
           for (String k : m.keySet())  
           {  
         	  System.out.println(k + " : " + m.get(k)); 
           } 
-           
-         
-          
-      
         }
-
-	}
+    }
 }
